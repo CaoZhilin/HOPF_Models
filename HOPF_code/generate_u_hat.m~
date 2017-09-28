@@ -1,0 +1,11 @@
+function [ u_hat ] = generate_u_hat( num_ver,gt )
+%GENERATE_U_HAT 此处显示有关此函数的摘要
+%   此处显示详细说明
+u_hat = zeros(num_ver);
+[length,~] = size(gt);
+for i = 1:length
+    class = gt(i,2);
+    u_hat(gt(i,1),gt())
+
+end
+
