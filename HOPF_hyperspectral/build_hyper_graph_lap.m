@@ -13,7 +13,7 @@ mPara.IS_ProH = 1;
 % 1: the entry of H is a probability,    2: the entry of H is 1 or 0.
 % Generally, IS_ProH = 1 works better.
 
-mPara.mProb = 0.35;%0.05;
+mPara.mProb = 0.2;%0.05;
 % The parameter for probabilistic incidence matrix (exp(-d^2/sigma^2), sigma = mPro.aveDist)
 % It is usually set as 0.05 or 0.1
 
@@ -21,7 +21,7 @@ mPara.GraphType = 1;
 % The neighbor selection method
 % 1: star expansion using mStarExp   2: distance-based using mRatio
 
-mPara.mStarExp = 12; 
+mPara.mStarExp = 15; 
 % The number of star expansion
 % It can be set as 5, 10, 20, or other numbers
 
