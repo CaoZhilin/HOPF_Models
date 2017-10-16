@@ -3,8 +3,8 @@
 % Author: Zhilin Cao <zhilin.cao@foxmail.com>, THU
 % There are currently no liceses.
 %% -------------------------------------------------
-matrixData = indian_pines_corrected;
-matrixGroundtruth = indian_pines_gt;
+matrixData = salinasA_corrected;
+matrixGroundtruth = salinasA_gt;
 
 [a,b,c] = size(matrixData);
 amount = 0;
@@ -32,5 +32,5 @@ for i = 1:a
         end
     end
 end
-
+[K,~] = size(unique(groundtruth));
 num_ver = amount;        

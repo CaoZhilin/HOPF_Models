@@ -22,7 +22,7 @@ total_difference = 1;
 %filename = ['C:\Users\DELL\Desktop\results\dt_' num2str(dt) '_mu_' num2str(mu) '.xlsx'];
 while  ( n < maxiter && total_difference > tol )
     u_n = u_n_1;
-    %disp(['--iteration round:',num2str(n)]);
+    disp(['--iteration round:',num2str(n)]);
     diffuse_difference = zeros(Ns,1);
     %dt = dt/(10);
     for i = 1:Ns
@@ -45,7 +45,7 @@ while  ( n < maxiter && total_difference > tol )
     max_difference = max(iteration_difference)/max(new_length);
     %disp(['--max:',num2str(max_difference)]);
     total_difference = sum(sum(abs((u_n_1-u_n))));
-    %disp(['--total diffirence:',num2str(total_difference)]);
+    disp(['--total diffirence:',num2str(total_difference)]);
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%
     [total_precision,each_precision] = calculate_precision(u_n_1,gt,K,num_ver,fidelity_gt);
     difference{n,1} = diffuse_difference;

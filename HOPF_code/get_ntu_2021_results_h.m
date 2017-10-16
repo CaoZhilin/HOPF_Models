@@ -32,7 +32,7 @@ flag = 1;
 for n_neighbors = 20
     for M = 10
         % build graph laplacian and eigen vectors & values
-        [eigVectors,eigValues] = eig(Lap{1,1});
+        %[eigVectors,eigValues] = eig(Lap{1,1});
         %eig_filename = ['C:\Users\DELL\Desktop\data\NTU_H\new_n_',num2str(n_neighbors),'_M_',num2str(M),'.mat'];
         %save(eig_filename,'eigVectors','eigValues');
         
@@ -40,15 +40,16 @@ for n_neighbors = 20
         disp(['--n_neighbors:',num2str(n_neighbors),' --M:',num2str(M)]);
         for mu = [1] %100 200 400 500] %200:50:500 600:100:900 1000:200:5000]
             for dt = [2] %[0.0005 0.001 0.005 0.01 0.05 0.1 0.5 1 ]%0.01:0.02:0.09 0.1:0.1:1 1:1:10]
-                for Ns = 1
-                    disp(['--mu:',num2str(mu),' --dt:',num2str(dt),' --Ns:',num2str(Ns),' --fid_num',num2str(fid_num)]);
+                for Ns = 3
+                    
                     for fid_num = 1:10
+                        disp(['--mu:',num2str(mu),' --dt:',num2str(dt),' --Ns:',num2str(Ns),' --fid_num',num2str(fid_num)]);
                         % fidelity persent from 5% to 90%
                         totalp = 0;
                         fid_list = fid_all{fid_num,1};
                         for fid_round = 1:10
-%                             disp(['--mu:',num2str(mu),' --dt:',num2str(dt),' --Ns:',num2str(Ns),' --fid_num',num2str(fid_num),...
-%                                 ' --fid_round:',num2str(fid_round)]);
+                             disp(['--mu:',num2str(mu),' --dt:',num2str(dt),' --Ns:',num2str(Ns),' --fid_num',num2str(fid_num),...
+                                 ' --fid_round:',num2str(fid_round)]);
                             fid = fid_list{1,fid_round};
                             fid_length = sum(fid);
                             fid_gt = zeros(fid_length,2);
